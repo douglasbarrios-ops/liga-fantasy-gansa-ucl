@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liga Fantasy · Champions 2026/27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0A1128;
+  --raised:#141F45;
+  --edge:#22305E;
+  --paper:#EDF0F8;
+  --muted:#7E8AAE;
+  --gold:#E9B949;
+  --live:#6EC1E4;
+  --gone:#6B4756;
+  --bar1:#4E6FD9; --bar2:#7A5BC4; --bar3:#3E9E9E; --bar4:#C4784A;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ground); color:var(--paper);
+  font:400 15px/1.55 Inter, system-ui, -apple-system, sans-serif;
+  padding:0 0 5rem;
+}
+.wrap{max-width:840px; margin:0 auto; padding:0 20px}
+
+/* ---------- masthead ---------- */
+header{padding:44px 0 20px}
+h1{
+  font:700 46px/0.92 'Barlow Condensed', Impact, sans-serif;
+  letter-spacing:-.01em; margin:0 0 6px;
+}
+h1 span{display:block; font-size:26px; font-weight:500; color:var(--muted)}
+.meta{font-size:12.5px; color:var(--muted); margin:0}
+.meta b{color:var(--paper); font-weight:500}
+
+/* ---------- live strip ---------- */
+#live{margin:18px 0 0; display:none}
+#live.on{display:block}
+.livebar{
+  border-left:3px solid var(--live); background:rgba(110,193,228,.07);
+  padding:10px 14px; border-radius:0 6px 6px 0;
+}
+.livebar h2{
+  font:600 11px/1 Inter,sans-serif; letter-spacing:.09em; color:var(--live);
+  margin:0 0 8px; text-transform:none;
+}
+.lrow{display:flex; justify-content:space-between; gap:12px; font-size:13.5px; padding:3px 0}
+.lrow em{font-style:normal; color:var(--muted)}
+
+/* ---------- standings ---------- */
+section{margin-top:38px}
+.shead{
+  display:flex; align-items:baseline; justify-content:space-between;
+  border-bottom:1px solid var(--edge); padding-bottom:8px; margin-bottom:2px;
+}
+.shead h2{font:600 20px/1 'Barlow Condensed',sans-serif; letter-spacing:.02em; margin:0; font-size:22px}
+.shead p{margin:0; font-size:12px; color:var(--muted)}
+
+.mgr{border-bottom:1px solid rgba(34,48,94,.55)}
+.mgr>button{
+  width:100%; background:none; border:0; color:inherit; font:inherit;
+  display:grid; grid-template-columns:30px 1fr auto; gap:14px; align-items:center;
+  padding:13px 4px 11px; cursor:pointer; text-align:left;
+}
+.mgr>button:focus-visible{outline:2px solid var(--live); outline-offset:2px}
+.pos{
+  font:600 21px/1 'Barlow Condensed',sans-serif; color:var(--muted);
+  text-align:right;
+}
+.mgr.lead .pos{color:var(--gold)}
+.who{min-width:0}
+.who .nm{font:600 22px/1.05 'Barlow Condensed',sans-serif; letter-spacing:.01em}
+.bar{display:flex; height:5px; margin-top:7px; border-radius:3px; overflow:hidden; background:rgba(255,255,255,.06)}
+.bar i{display:block; height:100%}
+.tot{font:700 30px/1 'Barlow Condensed',sans-serif; letter-spacing:-.01em}
+.tot small{display:block; font:400 10px/1 Inter,sans-serif; color:var(--muted); text-align:right; margin-top:4px}
+
+.detail{display:none; padding:2px 4px 18px}
+.mgr.open .detail{display:block}
+table.teams{width:100%; border-collapse:collapse; font-size:13.5px}
+table.teams th{
+  font:500 11px/1 Inter,sans-serif; color:var(--muted); text-align:right;
+  padding:0 0 7px; font-weight:500;
+}
+table.teams th:first-child{text-align:left}
+table.teams td{padding:6px 0; border-top:1px solid rgba(34,48,94,.4); text-align:right}
+table.teams td:first-child{text-align:left}
+.chip{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:8px; vertical-align:1px}
+.dim{color:var(--muted)}
+.gold{color:var(--gold)}
+.prov{color:var(--gold); opacity:.55}
+.out{color:var(--gone)}
+.sub{font-size:11.5px; color:var(--muted); margin:10px 0 0}
+
+/* ---------- club table ---------- */
+table.clubs{width:100%; border-collapse:collapse; font-size:13.5px}
+table.clubs th{
+  font:500 11px/1 Inter,sans-serif; color:var(--muted); font-weight:500;
+  text-align:right; padding:10px 0 8px; border-bottom:1px solid var(--edge);
+}
+table.clubs th:nth-child(2),table.clubs th:nth-child(3){text-align:left}
+table.clubs td{padding:7px 0 7px 10px; border-bottom:1px solid rgba(34,48,94,.35); text-align:right}
+table.clubs th{padding-left:10px}
+table.clubs td:nth-child(2),table.clubs td:nth-child(3){text-align:left}
+table.clubs td:first-child{
+  color:var(--muted); font:500 13.5px/1 'Barlow Condensed',sans-serif;
+  width:24px; padding-left:0; padding-right:2px;
+}
+tr.q8 td:first-child{color:var(--gold)}
+tr.q24 td:first-child{color:var(--paper)}
+tr.elim td{color:var(--gone)}
+tr.drop td{color:#606C8E}
+/* the two cut lines that decide everything: 8th and 24th */
+tr.cut8 td{border-bottom:1px solid var(--gold); box-shadow:inset 0 -1px 0 rgba(233,185,73,.25)}
+tr.cut24 td{border-bottom:1px solid var(--edge)}
+table.clubs tr.cutnote td{border:0; padding:6px 0 6px 2px; font-size:11px; color:var(--muted); text-align:left}
+.owner{color:var(--muted); font-size:12.5px}
+
+footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--edge); font-size:12px; color:var(--muted)}
+footer p{margin:0 0 6px}
+.err{display:block; margin-top:14px; background:rgba(233,185,73,.09);
+  border-left:3px solid var(--gold); padding:11px 14px; border-radius:0 6px 6px 0;
+  font-size:13.5px; color:var(--paper)}
+@media (max-width:520px){
+  h1{font-size:36px} h1 span{font-size:21px}
+  .tot{font-size:26px} .who .nm{font-size:19px}
+  table.teams{font-size:12.5px} table.clubs{font-size:12.5px}
+  table.clubs td,table.clubs th{padding-left:7px}
+  table.clubs th:nth-child(5),table.clubs td:nth-child(5){display:none} /* hide DG */
+}
+@media (prefers-reduced-motion:no-preference){
+  .dot{animation:pulse 1.8s ease-in-out infinite}
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Liga Fantasy<span>Champions League 2026/27</span></h1>
+  <p class="meta" id="meta">Cargando resultados…</p>
+</header>
+
+<div id="live"><div class="livebar"><h2>En juego ahora</h2><div id="livelist"></div></div></div>
+
+<section>
+  <div class="shead">
+    <h2>Clasificación</h2>
+    <p id="phase"></p>
+  </div>
+  <div id="standings"></div>
+</section>
+
+<section>
+  <div class="shead">
+    <h2>Los 36 equipos</h2>
+    <p>Fase de liga</p>
+  </div>
+  <table class="clubs">
+    <thead><tr><th></th><th>Equipo</th><th>Manager</th><th>PJ</th><th>DG</th><th>Pts</th><th>Fantasy</th></tr></thead>
+    <tbody id="clubs"></tbody>
+  </table>
+</section>
+
+<footer>
+  <p><b>Reglas.</b> Fase de liga: 3 por victoria, 1 por empate. Bonos: +3 por terminar en el top 8, +1 por terminar 9.º–24.º, +1 por superar el playoff y entrar al top 16. Los partidos del playoff 9–24 no dan puntos. De octavos en adelante cada partido vale 3 / 1 / 0, sin bonos por avanzar. Los penales no otorgan puntos: una eliminatoria definida desde el punto de penalti se puntúa como empate.</p>
+  <p id="stamp"></p>
+</footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* =========================================================================
+   SCORING ENGINE — all league rules live here and nowhere else.
+   Change a rule in this block and the whole page follows.
+   ========================================================================= */
+const RULES = {
+  win: 3,
+  draw: 1,
+  loss: 0,
+  bonusTop8: 3,        // finish 1st–8th in the league phase
+  bonus9to24: 1,       // finish 9th–24th in the league phase
+  bonusPlayoff: 1,     // win the 9–24 playoff and reach the round of 16
+  playoffLegsScore: false,  // the two playoff legs award no match points
+  // Extra time counts toward the match result; a penalty shootout does not.
+  // Flip to false to score knockout legs on the 90-minute score only.
+  extraTimeCounts: true,
+};
+
+const SCORING_STAGES = new Set(["LEAGUE", "R16", "QF", "SF", "FINAL"]);
+
+/** Result of a single match, penalties excluded. → "H" | "A" | "D" | null */
+function legResult(m) {
+  if (m.status !== "FINISHED") return null;
+  let h = m.homeScore, a = m.awayScore;   // fullTime, includes extra time
+  if (!RULES.extraTimeCounts && m.regHome != null && m.regAway != null) {
+    h = m.regHome; a = m.regAway;         // 90-minute score only
+  }
+  if (h == null || a == null) return null;
+  return h > a ? "H" : (a > h ? "A" : "D");
+}
+
+/** Points a club earns from one match. */
+function matchPoints(m, club) {
+  if (!SCORING_STAGES.has(m.stage)) return 0;
+  const r = legResult(m);
+  if (r === null) return 0;
+  if (r === "D") return RULES.draw;
+  const winner = r === "H" ? m.home : m.away;
+  return winner === club ? RULES.win : RULES.loss;
+}
+
+/** Which clubs won their 9–24 playoff tie (two legs, aggregate, pens decide). */
+function playoffWinners(matches) {
+  const ties = new Map();
+  for (const m of matches) {
+    if (m.stage !== "PLAYOFF") continue;
+    const key = [m.home, m.away].sort().join("|");
+    if (!ties.has(key)) ties.set(key, []);
+    ties.get(key).push(m);
+  }
+  const winners = new Set();
+  for (const [key, legs] of ties) {
+    if (legs.length < 2 || legs.some(l => l.status !== "FINISHED")) continue;
+    const [x, y] = key.split("|");
+    let ax = 0, ay = 0;
+    for (const l of legs) {
+      if (l.homeScore == null) return winners;
+      ax += (l.home === x ? l.homeScore : l.awayScore);
+      ay += (l.home === y ? l.homeScore : l.awayScore);
+    }
+    if (ax > ay) winners.add(x);
+    else if (ay > ax) winners.add(y);
+    else {
+      // level on aggregate → shootout decides who advances (still worth the +1)
+      const last = legs[legs.length - 1];
+      if (last.penHome != null && last.penAway != null) {
+        winners.add(last.penHome > last.penAway ? last.home : last.away);
+      }
+    }
+  }
+  return winners;
+}
+
+/** Full points breakdown for one club. */
+function scoreClub(club, data, poWinners, leaguePhaseDone) {
+  const ms = data.matches.filter(m => m.home === club || m.away === club);
+  let league = 0, ko = 0, played = 0;
+  for (const m of ms) {
+    const p = matchPoints(m, club);
+    if (m.stage === "LEAGUE") { league += p; if (m.status === "FINISHED") played++; }
+    else if (SCORING_STAGES.has(m.stage)) ko += p;
+  }
+  const row = data.standings.find(s => s.team === club);
+  const pos = row ? row.pos : null;
+
+  let bonus = 0;
+  if (pos != null) {
+    if (pos <= 8) bonus = RULES.bonusTop8;
+    else if (pos <= 24) bonus = RULES.bonus9to24;
+  }
+  if (poWinners.has(club)) bonus += RULES.bonusPlayoff;
+
+  return {
+    club, pos, played, league, bonus, ko,
+    provisional: !leaguePhaseDone,
+    eliminated: leaguePhaseDone && pos != null && pos > 24,
+    total: league + bonus + ko,
+  };
+}
+
+/* =========================================================================
+   RENDER
+   ========================================================================= */
+const BAR = ["var(--bar1)", "var(--bar2)", "var(--bar3)", "var(--bar4)"];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+function render(data) {
+  const finishedLeague = data.matches.filter(m => m.stage === "LEAGUE" && m.status === "FINISHED").length;
+  const leaguePhaseDone = data.standings.length >= 36 &&
+    data.standings.every(s => (s.played || 0) >= 8);
+  const poWinners = playoffWinners(data.matches);
+
+  // --- meta line
+  const md = Math.max(0, ...data.matches
+    .filter(m => m.stage === "LEAGUE" && m.status === "FINISHED")
+    .map(m => m.matchday || 0));
+  $("#meta").innerHTML = finishedLeague
+    ? `9 managers · 36 equipos · <b>${finishedLeague}</b> de 144 partidos de liga jugados`
+    : "9 managers · 36 equipos · la fase de liga arranca el 8 de septiembre";
+  $("#phase").textContent = leaguePhaseDone ? "Fase eliminatoria" : (md ? `Tras la jornada ${md}` : "Antes de la jornada 1");
+
+  // --- live
+  const live = data.matches.filter(m => ["IN_PLAY", "PAUSED"].includes(m.status));
+  if (live.length) {
+    $("#live").classList.add("on");
+    $("#livelist").innerHTML = live.map(m =>
+      `<div class="lrow"><span><span class="dot">●</span> ${esc(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${esc(m.away)}</span><em>${esc(ownerOf(data, m.home) || "—")} vs ${esc(ownerOf(data, m.away) || "—")}</em></div>`
+    ).join("");
+  } else $("#live").classList.remove("on");
+
+  // --- score every club once
+  const clubScores = new Map();
+  for (const teams of Object.values(data.draft))
+    for (const c of teams) clubScores.set(c, scoreClub(c, data, poWinners, leaguePhaseDone));
+
+  // --- managers
+  const table = Object.entries(data.draft).map(([mgr, teams]) => {
+    const rows = teams.map(t => clubScores.get(t));
+    return { mgr, rows, total: rows.reduce((s, r) => s + r.total, 0) };
+  }).sort((a, b) => b.total - a.total || a.mgr.localeCompare(b.mgr));
+
+  const started = finishedLeague > 0;
+  const max = Math.max(1, ...table.map(t => t.total));
+  $("#standings").innerHTML = table.map((t, i) => {
+    const tie = i > 0 && table[i - 1].total === t.total;
+    const pos = (!started || tie) ? "" : (i + 1);
+    const segs = t.rows.map((r, j) =>
+      `<i style="width:${(r.total / max * 100).toFixed(2)}%;background:${BAR[j]}"></i>`).join("");
+    const body = t.rows.slice().sort((a, b) => b.total - a.total).map(r => {
+      const j = t.rows.indexOf(r);
+      const bcls = r.provisional ? "prov" : (r.bonus ? "gold" : "dim");
+      return `<tr class="${r.eliminated ? "out" : ""}">
+        <td><span class="chip" style="background:${BAR[j]}"></span>${esc(r.club)}</td>
+        <td class="dim">${r.pos ? r.pos + ".º" : "—"}</td>
+        <td>${r.league}</td>
+        <td class="${bcls}">${r.bonus ? "+" + r.bonus : "—"}</td>
+        <td>${r.ko || "—"}</td>
+        <td><b>${r.total}</b></td></tr>`;
+    }).join("");
+    return `<div class="mgr ${started && i === 0 ? "lead" : ""}">
+      <button aria-expanded="false">
+        <span class="pos">${pos}</span>
+        <span class="who"><span class="nm">${esc(t.mgr)}</span><span class="bar">${segs}</span></span>
+        <span class="tot">${t.total}<small>puntos</small></span>
+      </button>
+      <div class="detail">
+        <table class="teams">
+          <thead><tr><th>Equipo</th><th>Pos</th><th>Liga</th><th>Bono</th><th>Elim.</th><th>Total</th></tr></thead>
+          <tbody>${body}</tbody>
+        </table>
+        ${!leaguePhaseDone ? '<p class="sub">Los bonos en tono apagado son provisionales: dependen de la tabla final tras la jornada 8.</p>' : ""}
+      </div></div>`;
+  }).join("");
+
+  document.querySelectorAll(".mgr > button").forEach(b => b.addEventListener("click", () => {
+    const box = b.parentElement, open = box.classList.toggle("open");
+    b.setAttribute("aria-expanded", open);
+  }));
+
+  // --- 36 clubs
+  const ordered = data.standings.length
+    ? data.standings.map(s => s.team)
+    : [...clubScores.keys()].sort();
+  const CUTNOTE = leaguePhaseDone ? {
+    8: "Clasificados directo a octavos · +3 puntos",
+    24: "Van al playoff 9–24 · +1 punto. Del 25.º al 36.º, eliminados",
+  } : {
+    8: "Zona de clasificación directa a octavos · +3 puntos",
+    24: "Zona de playoff 9–24 · +1 punto. Abajo, zona de eliminación",
+  };
+  $("#clubs").innerHTML = ordered.map(club => {
+    const s = clubScores.get(club);
+    const row = data.standings.find(r => r.team === club) || {};
+    if (!s) return "";
+    let cls = s.pos == null ? "" : (s.pos <= 8 ? "q8" : s.pos <= 24 ? "q24" : "elim");
+    if (row.pos === 8) cls += " cut8";
+    if (row.pos === 24) cls += " cut24";
+    if (cls.includes("elim") && !leaguePhaseDone) cls = cls.replace("elim", "drop");
+    return `<tr class="${cls}">
+      <td>${row.pos ?? ""}</td>
+      <td>${esc(club)}</td>
+      <td class="owner">${esc(ownerOf(data, club) || "")}</td>
+      <td>${row.played ?? 0}</td>
+      <td>${row.gd > 0 ? "+" + row.gd : (row.gd ?? 0)}</td>
+      <td>${row.pts ?? 0}</td>
+      <td><b>${s.total}</b></td></tr>` +
+      (CUTNOTE[row.pos] ? `<tr class="cutnote"><td colspan="7">${CUTNOTE[row.pos]}</td></tr>` : "");
+  }).join("");
+
+  const when = new Date(data.updated);
+  $("#stamp").textContent = "Actualizado " + when.toLocaleString("es", {
+    day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"
+  }) + " · datos de " + (data.source || "football-data.org");
+}
+
+function ownerOf(data, club) {
+  for (const [mgr, teams] of Object.entries(data.draft)) if (teams.includes(club)) return mgr;
+  return null;
+}
+
+/* =========================================================================
+   LOAD
+   ========================================================================= */
+const EMPTY_DRAFT = {
+  "Chino": ["Bayern München", "Stuttgart", "Fenerbahçe", "Sabah"],
+  "Eduars": ["Barcelona", "Sporting CP", "Galatasaray", "Slovan Bratislava"],
+  "OMG": ["Real Madrid", "RB Leipzig", "Como", "Viking"],
+  "Nestor": ["Paris Saint-Germain", "Napoli", "PSV", "Slavia Praha"],
+  "Doug": ["Arsenal", "Roma", "Real Betis", "AEK Athens"],
+  "Marron": ["Atlético Madrid", "Aston Villa", "Villarreal", "LASK"],
+  "Lucho": ["Manchester City", "Porto", "Lille", "Shakhtar Donetsk"],
+  "Pohio": ["Liverpool", "Borussia Dortmund", "Club Brugge", "Feyenoord"],
+  "Chacho": ["Manchester United", "Inter", "Bodø/Glimt", "Lens"],
+};
+
+fetch("data.json?t=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => {
+    render({
+      updated: new Date().toISOString(), source: "sin datos aún",
+      draft: EMPTY_DRAFT, standings: [], matches: []
+    });
+    $("#meta").innerHTML = '9 managers · 36 equipos<span class="err">Todavía no hay resultados cargados. La tabla se llena sola en cuanto corra la primera actualización — no hay nada que hacer.</span>';
+  });
+</script>
+</body>
+</html>
