@@ -1,175 +1,188 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liga Fantasy · Champions 2026/27</title>
+<title>Gansa UCL · Fantasy League 2026/27</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#0A1128;
-  --raised:#141F45;
-  --edge:#22305E;
-  --paper:#EDF0F8;
-  --muted:#7E8AAE;
-  --gold:#E9B949;
-  --live:#6EC1E4;
-  --gone:#6B4756;
-  --bar1:#4E6FD9; --bar2:#7A5BC4; --bar3:#3E9E9E; --bar4:#C4784A;
+  --ground:#0A1128; --raised:#141F45; --edge:#22305E;
+  --paper:#EDF0F8; --muted:#7E8AAE; --faint:#4E5A80;
+  --gold:#E9B949; --live:#6EC1E4; --gone:#6B4756;
+  --up:#63B37F; --down:#C86A6A;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--ground); color:var(--paper);
-  font:400 15px/1.55 Inter, system-ui, -apple-system, sans-serif;
-  padding:0 0 5rem;
-}
-.wrap{max-width:840px; margin:0 auto; padding:0 20px}
+body{margin:0; background:var(--ground); color:var(--paper);
+  font:400 15px/1.55 Inter,system-ui,-apple-system,sans-serif; padding:0 0 5rem}
+.wrap{max-width:900px; margin:0 auto; padding:0 20px}
 
-/* ---------- masthead ---------- */
-header{padding:44px 0 20px}
-h1{
-  font:700 46px/0.92 'Barlow Condensed', Impact, sans-serif;
-  letter-spacing:-.01em; margin:0 0 6px;
-}
+header{padding:44px 0 18px}
+h1{font:700 46px/0.92 'Barlow Condensed',Impact,sans-serif; letter-spacing:-.01em; margin:0 0 6px}
 h1 span{display:block; font-size:26px; font-weight:500; color:var(--muted)}
 .meta{font-size:12.5px; color:var(--muted); margin:0}
 .meta b{color:var(--paper); font-weight:500}
+.err{display:block; margin-top:14px; background:rgba(233,185,73,.09);
+  border-left:3px solid var(--gold); padding:11px 14px; border-radius:0 6px 6px 0;
+  font-size:13.5px; color:var(--paper)}
 
-/* ---------- live strip ---------- */
 #live{margin:18px 0 0; display:none}
 #live.on{display:block}
-.livebar{
-  border-left:3px solid var(--live); background:rgba(110,193,228,.07);
-  padding:10px 14px; border-radius:0 6px 6px 0;
-}
-.livebar h2{
-  font:600 11px/1 Inter,sans-serif; letter-spacing:.09em; color:var(--live);
-  margin:0 0 8px; text-transform:none;
-}
+.livebar{border-left:3px solid var(--live); background:rgba(110,193,228,.07);
+  padding:10px 14px; border-radius:0 6px 6px 0}
+.livebar h2{font:600 11px/1 Inter,sans-serif; letter-spacing:.09em; color:var(--live); margin:0 0 8px}
 .lrow{display:flex; justify-content:space-between; gap:12px; font-size:13.5px; padding:3px 0}
 .lrow em{font-style:normal; color:var(--muted)}
+.dot{color:var(--live)}
+@media (prefers-reduced-motion:no-preference){.dot{animation:pulse 1.8s ease-in-out infinite}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-/* ---------- standings ---------- */
-section{margin-top:38px}
-.shead{
-  display:flex; align-items:baseline; justify-content:space-between;
-  border-bottom:1px solid var(--edge); padding-bottom:8px; margin-bottom:2px;
-}
-.shead h2{font:600 20px/1 'Barlow Condensed',sans-serif; letter-spacing:.02em; margin:0; font-size:22px}
-.shead p{margin:0; font-size:12px; color:var(--muted)}
+section{margin-top:40px}
+.shead{display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  border-bottom:1px solid var(--edge); padding-bottom:8px; margin-bottom:2px}
+.shead h2{font:600 22px/1 'Barlow Condensed',sans-serif; letter-spacing:.02em; margin:0}
+.shead p{margin:0; font-size:12px; color:var(--muted); text-align:right}
 
 .mgr{border-bottom:1px solid rgba(34,48,94,.55)}
-.mgr>button{
-  width:100%; background:none; border:0; color:inherit; font:inherit;
-  display:grid; grid-template-columns:30px 1fr auto; gap:14px; align-items:center;
-  padding:13px 4px 11px; cursor:pointer; text-align:left;
-}
+.mgr>button{width:100%; background:none; border:0; color:inherit; font:inherit;
+  display:grid; grid-template-columns:26px 20px 1fr auto; gap:10px; align-items:center;
+  padding:13px 4px 12px; cursor:pointer; text-align:left}
 .mgr>button:focus-visible{outline:2px solid var(--live); outline-offset:2px}
-.pos{
-  font:600 21px/1 'Barlow Condensed',sans-serif; color:var(--muted);
-  text-align:right;
-}
+.pos{font:600 21px/1 'Barlow Condensed',sans-serif; color:var(--muted); text-align:right}
 .mgr.lead .pos{color:var(--gold)}
+.mv{font-size:10px; line-height:1; text-align:center; color:var(--faint)}
+.mv.u{color:var(--up)} .mv.d{color:var(--down)}
 .who{min-width:0}
-.who .nm{font:600 22px/1.05 'Barlow Condensed',sans-serif; letter-spacing:.01em}
-.bar{display:flex; height:5px; margin-top:7px; border-radius:3px; overflow:hidden; background:rgba(255,255,255,.06)}
+.who .nm{font:600 22px/1.05 'Barlow Condensed',sans-serif; display:block}
+.who .gl{font-size:11px; color:var(--muted); margin-top:2px; display:block}
+.bar{display:flex; height:5px; margin-top:6px; border-radius:3px; overflow:hidden; background:rgba(255,255,255,.06)}
 .bar i{display:block; height:100%}
-.tot{font:700 30px/1 'Barlow Condensed',sans-serif; letter-spacing:-.01em}
-.tot small{display:block; font:400 10px/1 Inter,sans-serif; color:var(--muted); text-align:right; margin-top:4px}
+.tot{font:700 30px/1 'Barlow Condensed',sans-serif; letter-spacing:-.01em; text-align:right}
+.tot small{display:block; font:400 10px/1 Inter,sans-serif; color:var(--muted); margin-top:4px}
 
 .detail{display:none; padding:2px 4px 18px}
 .mgr.open .detail{display:block}
 table.teams{width:100%; border-collapse:collapse; font-size:13.5px}
-table.teams th{
-  font:500 11px/1 Inter,sans-serif; color:var(--muted); text-align:right;
-  padding:0 0 7px; font-weight:500;
-}
-table.teams th:first-child{text-align:left}
-table.teams td{padding:6px 0; border-top:1px solid rgba(34,48,94,.4); text-align:right}
-table.teams td:first-child{text-align:left}
+table.teams th{font:500 11px/1 Inter,sans-serif; color:var(--muted); text-align:right; padding:0 0 7px 8px; font-weight:500}
+table.teams th:first-child{text-align:left; padding-left:0}
+table.teams td{padding:6px 0 6px 8px; border-top:1px solid rgba(34,48,94,.4); text-align:right}
+table.teams td:first-child{text-align:left; padding-left:0}
 .chip{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:8px; vertical-align:1px}
-.dim{color:var(--muted)}
-.gold{color:var(--gold)}
-.prov{color:var(--gold); opacity:.55}
-.out{color:var(--gone)}
+.dim{color:var(--muted)} .gold{color:var(--gold)} .prov{color:var(--gold); opacity:.55}
+tr.out td{color:var(--gone)}
 .sub{font-size:11.5px; color:var(--muted); margin:10px 0 0}
+.zone{font-size:12px; color:var(--muted); margin:11px 0 0}
+.zone b{color:var(--paper); font-weight:500}
 
-/* ---------- club table ---------- */
+#chart svg{width:100%; height:auto; display:block; overflow:visible}
+.bl{fill:none; stroke-width:2.2; opacity:.6; transition:opacity .15s, stroke-width .15s}
+.bd{opacity:.6; transition:opacity .15s}
+#chart.sel .bl,#chart.sel .bd{opacity:.13}
+#chart.sel .bl.hot{opacity:1; stroke-width:3.4}
+#chart.sel .bd.hot{opacity:1}
+.bax{font:500 11px Inter,sans-serif; fill:var(--faint)}
+.bgrid{stroke:rgba(34,48,94,.5); stroke-width:1}
+.bband{fill:rgba(255,255,255,.018)}
+.legend{display:flex; flex-wrap:wrap; gap:5px 7px; margin-top:14px}
+.legend button{background:none; border:1px solid var(--edge); border-radius:20px;
+  color:var(--muted); font:500 12px Inter,sans-serif; padding:4px 11px 4px 8px;
+  cursor:pointer; display:flex; align-items:center; gap:6px; transition:border-color .15s,color .15s}
+.legend button:hover{color:var(--paper)}
+.legend button.on{color:var(--paper); border-color:currentColor}
+.legend s{width:9px; height:9px; border-radius:50%; display:block}
+.legend .clr{margin-left:2px; border-style:dashed}
+
+.feed{display:grid; grid-template-columns:auto 1fr auto; gap:4px 14px; align-items:baseline;
+  font-size:13.5px; padding:9px 0; border-bottom:1px solid rgba(34,48,94,.35)}
+.feed .fd{color:var(--faint); font-size:11.5px; white-space:nowrap}
+.feed .fm{min-width:0}
+.feed .fm .sc{font:600 15px/1 'Barlow Condensed',sans-serif; margin:0 5px}
+.feed .fo{font-size:11.5px; color:var(--muted); white-space:nowrap; text-align:right}
+.feed .fo b{font-weight:600; color:var(--paper)}
+.feed .fo .z{color:var(--faint)}
+.stg{color:var(--faint); font-size:11px}
+
 table.clubs{width:100%; border-collapse:collapse; font-size:13.5px}
-table.clubs th{
-  font:500 11px/1 Inter,sans-serif; color:var(--muted); font-weight:500;
-  text-align:right; padding:10px 0 8px; border-bottom:1px solid var(--edge);
-}
-table.clubs th:nth-child(2),table.clubs th:nth-child(3){text-align:left}
+table.clubs th{font:500 11px/1 Inter,sans-serif; color:var(--muted); font-weight:500;
+  text-align:right; padding:10px 0 8px 10px; border-bottom:1px solid var(--edge)}
 table.clubs td{padding:7px 0 7px 10px; border-bottom:1px solid rgba(34,48,94,.35); text-align:right}
-table.clubs th{padding-left:10px}
+table.clubs th:nth-child(2),table.clubs th:nth-child(3),
 table.clubs td:nth-child(2),table.clubs td:nth-child(3){text-align:left}
-table.clubs td:first-child{
+table.clubs td:first-child,table.clubs th:first-child{
   color:var(--muted); font:500 13.5px/1 'Barlow Condensed',sans-serif;
-  width:24px; padding-left:0; padding-right:2px;
-}
+  width:24px; padding-left:0; padding-right:2px}
 tr.q8 td:first-child{color:var(--gold)}
 tr.q24 td:first-child{color:var(--paper)}
 tr.elim td{color:var(--gone)}
 tr.drop td{color:#606C8E}
-/* the two cut lines that decide everything: 8th and 24th */
 tr.cut8 td{border-bottom:1px solid var(--gold); box-shadow:inset 0 -1px 0 rgba(233,185,73,.25)}
 tr.cut24 td{border-bottom:1px solid var(--edge)}
-table.clubs tr.cutnote td{border:0; padding:6px 0 6px 2px; font-size:11px; color:var(--muted); text-align:left}
+table.clubs tr.cutnote td{border:0; box-shadow:none; padding:6px 0 6px 2px;
+  font-size:11px; color:var(--muted); text-align:left}
 .owner{color:var(--muted); font-size:12.5px}
 
-footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--edge); font-size:12px; color:var(--muted)}
-footer p{margin:0 0 6px}
-.err{display:block; margin-top:14px; background:rgba(233,185,73,.09);
-  border-left:3px solid var(--gold); padding:11px 14px; border-radius:0 6px 6px 0;
-  font-size:13.5px; color:var(--paper)}
-@media (max-width:520px){
+footer{margin-top:44px; padding-top:16px; border-top:1px solid var(--edge); font-size:12px; color:var(--muted)}
+footer p{margin:0 0 8px}
+footer b{color:var(--paper); font-weight:500}
+
+@media (max-width:600px){
   h1{font-size:36px} h1 span{font-size:21px}
   .tot{font-size:26px} .who .nm{font-size:19px}
-  table.teams{font-size:12.5px} table.clubs{font-size:12.5px}
+  table.teams,table.clubs{font-size:12.5px}
   table.clubs td,table.clubs th{padding-left:7px}
-  table.clubs th:nth-child(5),table.clubs td:nth-child(5){display:none} /* hide DG */
+  table.clubs th:nth-child(5),table.clubs td:nth-child(5),
+  table.clubs th:nth-child(6),table.clubs td:nth-child(6){display:none}
+  table.teams th:nth-child(6),table.teams td:nth-child(6),
+  table.teams th:nth-child(7),table.teams td:nth-child(7){display:none}
+  .feed{grid-template-columns:1fr auto; gap:2px 10px}
+  .feed .fd{grid-column:1/-1; order:-1}
 }
-@media (prefers-reduced-motion:no-preference){
-  .dot{animation:pulse 1.8s ease-in-out infinite}
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <h1>Liga Fantasy<span>Champions League 2026/27</span></h1>
-  <p class="meta" id="meta">Cargando resultados…</p>
+  <h1>Gansa UCL<span>Fantasy League 2026/27</span></h1>
+  <p class="meta" id="meta">Loading results…</p>
 </header>
 
-<div id="live"><div class="livebar"><h2>En juego ahora</h2><div id="livelist"></div></div></div>
+<div id="live"><div class="livebar"><h2>Live now</h2><div id="livelist"></div></div></div>
 
 <section>
-  <div class="shead">
-    <h2>Clasificación</h2>
-    <p id="phase"></p>
-  </div>
+  <div class="shead"><h2>Standings</h2><p id="phase"></p></div>
   <div id="standings"></div>
 </section>
 
+<section id="chartsec" hidden>
+  <div class="shead"><h2>How it moved</h2><p>Position after each round · tap a name</p></div>
+  <div id="chart"></div>
+</section>
+
+<section id="resultsec" hidden>
+  <div class="shead"><h2>Latest results</h2><p id="reslabel"></p></div>
+  <div id="results"></div>
+</section>
+
+<section id="fixsec" hidden>
+  <div class="shead"><h2>Coming up</h2><p id="fixlabel"></p></div>
+  <div id="fixtures"></div>
+</section>
+
 <section>
-  <div class="shead">
-    <h2>Los 36 equipos</h2>
-    <p>Fase de liga</p>
-  </div>
+  <div class="shead"><h2>All 36 clubs</h2><p>League phase</p></div>
   <table class="clubs">
-    <thead><tr><th></th><th>Equipo</th><th>Manager</th><th>PJ</th><th>DG</th><th>Pts</th><th>Fantasy</th></tr></thead>
+    <thead><tr><th></th><th>Club</th><th>Manager</th><th>MP</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Fantasy</th></tr></thead>
     <tbody id="clubs"></tbody>
   </table>
 </section>
 
 <footer>
-  <p><b>Reglas.</b> Fase de liga: 3 por victoria, 1 por empate. Bonos: +3 por terminar en el top 8, +1 por terminar 9.º–24.º, +1 por superar el playoff y entrar al top 16. Los partidos del playoff 9–24 no dan puntos. De octavos en adelante cada partido vale 3 / 1 / 0, sin bonos por avanzar. Los penales no otorgan puntos: una eliminatoria definida desde el punto de penalti se puntúa como empate.</p>
+  <p><b>Scoring.</b> League phase: 3 points for a win, 1 for a draw. Bonuses: +3 for finishing in the top 8, +1 for finishing 9th to 24th, +1 for surviving the 9–24 playoff and reaching the round of 16. The two playoff legs award no match points and no goals. From the round of 16 onward every leg is worth 3 / 1 / 0, with no further bonuses for advancing. Penalty shootouts award nothing: a leg settled from the spot is scored as a draw. Extra time counts toward the result.</p>
+  <p><b>Ties.</b> Managers level on points are separated by goal difference, then goals scored, then alphabetically. Goals are totalled across all four clubs in every match that awards points — the league phase and the round of 16 onward. Playoff legs are excluded, as they are for points.</p>
   <p id="stamp"></p>
 </footer>
 
@@ -179,249 +192,432 @@ footer p{margin:0 0 6px}
 "use strict";
 
 /* =========================================================================
-   SCORING ENGINE — all league rules live here and nowhere else.
-   Change a rule in this block and the whole page follows.
+   SCORING ENGINE — every league rule lives here and nowhere else.
    ========================================================================= */
 const RULES = {
-  win: 3,
-  draw: 1,
-  loss: 0,
-  bonusTop8: 3,        // finish 1st–8th in the league phase
-  bonus9to24: 1,       // finish 9th–24th in the league phase
-  bonusPlayoff: 1,     // win the 9–24 playoff and reach the round of 16
-  playoffLegsScore: false,  // the two playoff legs award no match points
-  // Extra time counts toward the match result; a penalty shootout does not.
-  // Flip to false to score knockout legs on the 90-minute score only.
-  extraTimeCounts: true,
+  win: 3, draw: 1, loss: 0,
+  bonusTop8: 3,          // finish 1st to 8th in the league phase
+  bonus9to24: 1,         // finish 9th to 24th in the league phase
+  bonusPlayoff: 1,       // survive the 9-24 playoff and reach the round of 16
+  extraTimeCounts: true, // set false to score knockout legs on 90 minutes only
 };
 
-const SCORING_STAGES = new Set(["LEAGUE", "R16", "QF", "SF", "FINAL"]);
+// Stages that award match points and count toward goals. PLAYOFF is absent on
+// purpose: those two legs decide who advances but score nothing.
+const SCORING = ["LEAGUE", "R16", "QF", "SF", "FINAL"];
+const ROUND_ORDER = ["MD1","MD2","MD3","MD4","MD5","MD6","MD7","MD8",
+                     "PO","R16","QF","SF","FINAL"];
+const ROUND_LABEL = {MD1:"1",MD2:"2",MD3:"3",MD4:"4",MD5:"5",MD6:"6",MD7:"7",MD8:"8",
+                     PO:"PO",R16:"R16",QF:"QF",SF:"SF",FINAL:"F"};
+const STAGE_NAME = {LEAGUE:"League phase", PLAYOFF:"Knockout playoff", R16:"Round of 16",
+                    QF:"Quarter-final", SF:"Semi-final", FINAL:"Final"};
 
-/** Result of a single match, penalties excluded. → "H" | "A" | "D" | null */
+function roundOf(m) {
+  if (m.stage === "LEAGUE") return "MD" + (m.matchday || 1);
+  if (m.stage === "PLAYOFF") return "PO";
+  return m.stage;
+}
+const roundIdx = m => ROUND_ORDER.indexOf(roundOf(m));
+
+/** Result of one leg, penalties excluded. Returns "H", "A", "D" or null. */
 function legResult(m) {
   if (m.status !== "FINISHED") return null;
-  let h = m.homeScore, a = m.awayScore;   // fullTime, includes extra time
-  if (!RULES.extraTimeCounts && m.regHome != null && m.regAway != null) {
-    h = m.regHome; a = m.regAway;         // 90-minute score only
-  }
+  let h = m.homeScore, a = m.awayScore;      // fullTime, includes extra time
+  if (!RULES.extraTimeCounts && m.regHome != null) { h = m.regHome; a = m.regAway; }
   if (h == null || a == null) return null;
   return h > a ? "H" : (a > h ? "A" : "D");
 }
 
-/** Points a club earns from one match. */
+/** Points one club takes from one match. */
 function matchPoints(m, club) {
-  if (!SCORING_STAGES.has(m.stage)) return 0;
+  if (!SCORING.includes(m.stage)) return 0;
   const r = legResult(m);
   if (r === null) return 0;
   if (r === "D") return RULES.draw;
-  const winner = r === "H" ? m.home : m.away;
-  return winner === club ? RULES.win : RULES.loss;
+  return ((r === "H" ? m.home : m.away) === club) ? RULES.win : RULES.loss;
 }
 
-/** Which clubs won their 9–24 playoff tie (two legs, aggregate, pens decide). */
+/** Build the league table from scratch so we can rewind to any round. */
+function buildLeagueTable(matches, clubs) {
+  const t = new Map(clubs.map(c => [c, {club:c, played:0, w:0, d:0, l:0, gf:0, ga:0, gd:0, pts:0}]));
+  for (const m of matches) {
+    if (m.stage !== "LEAGUE" || m.status !== "FINISHED") continue;
+    const h = t.get(m.home), a = t.get(m.away);
+    if (!h || !a || m.homeScore == null) continue;
+    for (const [x, gf, ga] of [[h, m.homeScore, m.awayScore], [a, m.awayScore, m.homeScore]]) {
+      x.played++; x.gf += gf; x.ga += ga; x.gd = x.gf - x.ga;
+      if (gf > ga) { x.pts += 3; x.w++; } else if (gf === ga) { x.pts += 1; x.d++; } else x.l++;
+    }
+  }
+  const rows = [...t.values()].sort((p, q) =>
+    q.pts - p.pts || q.gd - p.gd || q.gf - p.gf || p.club.localeCompare(q.club));
+  rows.forEach((r, i) => r.pos = i + 1);
+  return rows;
+}
+
+/** Clubs that won their 9-24 playoff tie. Aggregate over two legs; a shootout
+    still sends a club through, so the +1 stands even though the shootout
+    itself is worth nothing. */
 function playoffWinners(matches) {
   const ties = new Map();
   for (const m of matches) {
     if (m.stage !== "PLAYOFF") continue;
-    const key = [m.home, m.away].sort().join("|");
-    if (!ties.has(key)) ties.set(key, []);
-    ties.get(key).push(m);
+    const k = [m.home, m.away].sort().join("|");
+    if (!ties.has(k)) ties.set(k, []);
+    ties.get(k).push(m);
   }
-  const winners = new Set();
-  for (const [key, legs] of ties) {
+  const won = new Set();
+  for (const [k, legs] of ties) {
     if (legs.length < 2 || legs.some(l => l.status !== "FINISHED")) continue;
-    const [x, y] = key.split("|");
-    let ax = 0, ay = 0;
+    const [x, y] = k.split("|");
+    let ax = 0, ay = 0, bad = false;
     for (const l of legs) {
-      if (l.homeScore == null) return winners;
-      ax += (l.home === x ? l.homeScore : l.awayScore);
-      ay += (l.home === y ? l.homeScore : l.awayScore);
+      if (l.homeScore == null) { bad = true; break; }
+      ax += l.home === x ? l.homeScore : l.awayScore;
+      ay += l.home === y ? l.homeScore : l.awayScore;
     }
-    if (ax > ay) winners.add(x);
-    else if (ay > ax) winners.add(y);
+    if (bad) continue;
+    if (ax > ay) won.add(x);
+    else if (ay > ax) won.add(y);
     else {
-      // level on aggregate → shootout decides who advances (still worth the +1)
       const last = legs[legs.length - 1];
-      if (last.penHome != null && last.penAway != null) {
-        winners.add(last.penHome > last.penAway ? last.home : last.away);
-      }
+      if (last.penHome != null) won.add(last.penHome > last.penAway ? last.home : last.away);
     }
   }
-  return winners;
+  return won;
 }
 
-/** Full points breakdown for one club. */
-function scoreClub(club, data, poWinners, leaguePhaseDone) {
-  const ms = data.matches.filter(m => m.home === club || m.away === club);
-  let league = 0, ko = 0, played = 0;
-  for (const m of ms) {
-    const p = matchPoints(m, club);
-    if (m.stage === "LEAGUE") { league += p; if (m.status === "FINISHED") played++; }
-    else if (SCORING_STAGES.has(m.stage)) ko += p;
-  }
-  const row = data.standings.find(s => s.team === club);
-  const pos = row ? row.pos : null;
+/**
+ * Score the whole league using only matches up to and including round `upTo`
+ * (an index into ROUND_ORDER; pass null for everything).
+ * Returns { clubs, managers, leagueDone } with managers already ranked.
+ */
+function scoreAll(data, upTo, officialTable) {
+  const clubs = Object.values(data.draft).flat();
+  const inScope = data.matches.filter(m =>
+    m.status === "FINISHED" && (upTo == null || roundIdx(m) <= upTo));
 
-  let bonus = 0;
-  if (pos != null) {
-    if (pos <= 8) bonus = RULES.bonusTop8;
-    else if (pos <= 24) bonus = RULES.bonus9to24;
-  }
-  if (poWinners.has(club)) bonus += RULES.bonusPlayoff;
+  const table = (officialTable && officialTable.length >= 36)
+    ? officialTable : buildLeagueTable(inScope, clubs);
+  const posOf = new Map(table.map(r => [r.club || r.team, r.pos]));
+  const leagueDone = table.length >= 36 && table.every(r => (r.played || 0) >= 8);
+  const poWon = playoffWinners(inScope);
 
-  return {
-    club, pos, played, league, bonus, ko,
-    provisional: !leaguePhaseDone,
-    eliminated: leaguePhaseDone && pos != null && pos > 24,
-    total: league + bonus + ko,
-  };
+  const cs = new Map(clubs.map(c => [c, {
+    club:c, pos:posOf.get(c) ?? null, league:0, ko:0, bonus:0,
+    gf:0, ga:0, gd:0, provisional:!leagueDone, eliminated:false, total:0
+  }]));
+
+  for (const m of inScope) {
+    if (!SCORING.includes(m.stage) || m.homeScore == null) continue;
+    for (const [club, gf, ga] of [[m.home, m.homeScore, m.awayScore],
+                                  [m.away, m.awayScore, m.homeScore]]) {
+      const c = cs.get(club);
+      if (!c) continue;
+      c.gf += gf; c.ga += ga; c.gd = c.gf - c.ga;
+      const p = matchPoints(m, club);
+      if (m.stage === "LEAGUE") c.league += p; else c.ko += p;
+    }
+  }
+  for (const c of cs.values()) {
+    if (c.pos != null) c.bonus = c.pos <= 8 ? RULES.bonusTop8 : (c.pos <= 24 ? RULES.bonus9to24 : 0);
+    if (poWon.has(c.club)) c.bonus += RULES.bonusPlayoff;
+    c.eliminated = leagueDone && c.pos != null && c.pos > 24;
+    c.total = c.league + c.bonus + c.ko;
+  }
+
+  const managers = Object.entries(data.draft).map(([mgr, teams]) => {
+    const rows = teams.map(t => cs.get(t));
+    const sum = k => rows.reduce((s, r) => s + r[k], 0);
+    const gf = sum("gf"), ga = sum("ga");
+    return { mgr, rows, total: sum("total"), gf, ga, gd: gf - ga };
+  }).sort((a, b) =>
+    b.total - a.total || b.gd - a.gd || b.gf - a.gf || a.mgr.localeCompare(b.mgr));
+  managers.forEach((m, i) => m.rank = i + 1);
+
+  return { clubs: cs, managers, leagueDone };
 }
 
 /* =========================================================================
    RENDER
    ========================================================================= */
-const BAR = ["var(--bar1)", "var(--bar2)", "var(--bar3)", "var(--bar4)"];
+const SEG = ["#4E6FD9", "#7A5BC4", "#3E9E9E", "#C4784A"];       // four draft slots
+const LINE = ["#E9B949","#5B8DEF","#9B6FD4","#3FA9A0","#D4794E",
+              "#C9648C","#7BAE5E","#6FC5DE","#B4634A"];          // one per manager
 const $ = s => document.querySelector(s);
-const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtGD = n => (n > 0 ? "+" : "") + n;
+const ordinal = n => {
+  const s = ["th","st","nd","rd"], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
+
+let DATA = null;
+const COLOR = new Map();
+
+function ownerOf(club) {
+  for (const [m, ts] of Object.entries(DATA.draft)) if (ts.includes(club)) return m;
+  return null;
+}
 
 function render(data) {
-  const finishedLeague = data.matches.filter(m => m.stage === "LEAGUE" && m.status === "FINISHED").length;
-  const leaguePhaseDone = data.standings.length >= 36 &&
-    data.standings.every(s => (s.played || 0) >= 8);
-  const poWinners = playoffWinners(data.matches);
+  DATA = data;
+  Object.keys(data.draft).slice().sort().forEach((m, i) => COLOR.set(m, LINE[i % LINE.length]));
 
-  // --- meta line
-  const md = Math.max(0, ...data.matches
-    .filter(m => m.stage === "LEAGUE" && m.status === "FINISHED")
-    .map(m => m.matchday || 0));
-  $("#meta").innerHTML = finishedLeague
-    ? `9 managers · 36 equipos · <b>${finishedLeague}</b> de 144 partidos de liga jugados`
-    : "9 managers · 36 equipos · la fase de liga arranca el 8 de septiembre";
-  $("#phase").textContent = leaguePhaseDone ? "Fase eliminatoria" : (md ? `Tras la jornada ${md}` : "Antes de la jornada 1");
+  const official = (data.standings || []).map(r => ({ ...r, club: r.team }));
+  const now = scoreAll(data, null, official);
+  const finished = data.matches.filter(m => m.stage === "LEAGUE" && m.status === "FINISHED").length;
+  const started = finished > 0;
 
-  // --- live
-  const live = data.matches.filter(m => ["IN_PLAY", "PAUSED"].includes(m.status));
-  if (live.length) {
-    $("#live").classList.add("on");
-    $("#livelist").innerHTML = live.map(m =>
-      `<div class="lrow"><span><span class="dot">●</span> ${esc(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${esc(m.away)}</span><em>${esc(ownerOf(data, m.home) || "—")} vs ${esc(ownerOf(data, m.away) || "—")}</em></div>`
-    ).join("");
-  } else $("#live").classList.remove("on");
+  const doneRounds = ROUND_ORDER.map((r, i) => i)
+    .filter(i => data.matches.some(m => m.status === "FINISHED" && roundIdx(m) === i));
+  const lastIdx = doneRounds.length ? doneRounds[doneRounds.length - 1] : null;
 
-  // --- score every club once
-  const clubScores = new Map();
-  for (const teams of Object.values(data.draft))
-    for (const c of teams) clubScores.set(c, scoreClub(c, data, poWinners, leaguePhaseDone));
+  const move = new Map();
+  if (doneRounds.length >= 2) {
+    const prev = scoreAll(data, doneRounds[doneRounds.length - 2], null);
+    const prevRank = new Map(prev.managers.map(m => [m.mgr, m.rank]));
+    for (const m of now.managers) move.set(m.mgr, (prevRank.get(m.mgr) ?? m.rank) - m.rank);
+  }
 
-  // --- managers
-  const table = Object.entries(data.draft).map(([mgr, teams]) => {
-    const rows = teams.map(t => clubScores.get(t));
-    return { mgr, rows, total: rows.reduce((s, r) => s + r.total, 0) };
-  }).sort((a, b) => b.total - a.total || a.mgr.localeCompare(b.mgr));
+  renderHeader(data, finished, lastIdx);
+  renderLive(data);
+  renderStandings(now, move, started);
+  renderChart(data, doneRounds);
+  renderFeeds(data);
+  renderClubs(data, now, official);
 
-  const started = finishedLeague > 0;
-  const max = Math.max(1, ...table.map(t => t.total));
-  $("#standings").innerHTML = table.map((t, i) => {
-    const tie = i > 0 && table[i - 1].total === t.total;
-    const pos = (!started || tie) ? "" : (i + 1);
+  $("#stamp").textContent = "Updated " + new Date(data.updated).toLocaleString("en-GB",
+    { day:"numeric", month:"short", hour:"2-digit", minute:"2-digit" }) +
+    " · data from " + (data.source || "football-data.org") +
+    " · refreshes automatically every 10 minutes";
+}
+
+function renderHeader(data, finished, lastIdx) {
+  $("#meta").innerHTML = finished
+    ? `9 managers · 36 clubs · <b>${finished}</b> of 144 league matches played`
+    : "9 managers · 36 clubs · the league phase begins 8 September";
+  const r = lastIdx == null ? null : ROUND_ORDER[lastIdx];
+  $("#phase").textContent = !r ? "Before matchday 1"
+    : r.startsWith("MD") ? `After matchday ${r.slice(2)}`
+    : `After the ${(STAGE_NAME[r] || r).toLowerCase()}`;
+}
+
+function renderLive(data) {
+  const live = data.matches.filter(m => ["IN_PLAY","PAUSED"].includes(m.status));
+  if (!live.length) { $("#live").classList.remove("on"); return; }
+  $("#live").classList.add("on");
+  $("#livelist").innerHTML = live.map(m =>
+    `<div class="lrow"><span><span class="dot">●</span> ${esc(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${esc(m.away)}</span>
+     <em>${esc(ownerOf(m.home) || "—")} v ${esc(ownerOf(m.away) || "—")}</em></div>`).join("");
+}
+
+function renderStandings(now, move, started) {
+  const max = Math.max(1, ...now.managers.map(t => t.total));
+  $("#standings").innerHTML = now.managers.map((t, i) => {
+    const p = now.managers[i - 1];
+    const tie = i > 0 && p.total === t.total && p.gd === t.gd && p.gf === t.gf;
+    const mv = move.get(t.mgr) ?? 0;
+    const mvHtml = (!started || !move.size) ? '<span class="mv"></span>' :
+      mv > 0 ? `<span class="mv u">▲${mv}</span>` :
+      mv < 0 ? `<span class="mv d">▼${-mv}</span>` : '<span class="mv">·</span>';
     const segs = t.rows.map((r, j) =>
-      `<i style="width:${(r.total / max * 100).toFixed(2)}%;background:${BAR[j]}"></i>`).join("");
+      `<i style="width:${(r.total / max * 100).toFixed(2)}%;background:${SEG[j]}"></i>`).join("");
+
     const body = t.rows.slice().sort((a, b) => b.total - a.total).map(r => {
       const j = t.rows.indexOf(r);
-      const bcls = r.provisional ? "prov" : (r.bonus ? "gold" : "dim");
       return `<tr class="${r.eliminated ? "out" : ""}">
-        <td><span class="chip" style="background:${BAR[j]}"></span>${esc(r.club)}</td>
-        <td class="dim">${r.pos ? r.pos + ".º" : "—"}</td>
+        <td><span class="chip" style="background:${SEG[j]}"></span>${esc(r.club)}</td>
+        <td class="dim">${r.pos ? ordinal(r.pos) : "—"}</td>
         <td>${r.league}</td>
-        <td class="${bcls}">${r.bonus ? "+" + r.bonus : "—"}</td>
+        <td class="${r.provisional ? "prov" : (r.bonus ? "gold" : "dim")}">${r.bonus ? "+" + r.bonus : "—"}</td>
         <td>${r.ko || "—"}</td>
+        <td class="dim">${r.gf}</td><td class="dim">${r.ga}</td><td class="dim">${fmtGD(r.gd)}</td>
         <td><b>${r.total}</b></td></tr>`;
     }).join("");
+
+    const z = { top:0, po:0, out:0 };
+    for (const r of t.rows) { if (r.pos == null) continue; r.pos <= 8 ? z.top++ : r.pos <= 24 ? z.po++ : z.out++; }
+    const zone = started ? `<p class="zone">Bonus outlook: <b>${z.top}</b> in the top eight,
+      <b>${z.po}</b> in the playoff places, <b>${z.out}</b> below the line ·
+      <b>${t.rows.reduce((s, r) => s + r.bonus, 0)}</b> bonus points${now.leagueDone ? "" : " on current standings"}</p>` : "";
+
     return `<div class="mgr ${started && i === 0 ? "lead" : ""}">
       <button aria-expanded="false">
-        <span class="pos">${pos}</span>
-        <span class="who"><span class="nm">${esc(t.mgr)}</span><span class="bar">${segs}</span></span>
-        <span class="tot">${t.total}<small>puntos</small></span>
+        <span class="pos">${(!started || tie) ? "" : (i + 1)}</span>
+        ${mvHtml}
+        <span class="who"><span class="nm">${esc(t.mgr)}</span>
+          <span class="gl">GF ${t.gf} · GA ${t.ga} · GD ${fmtGD(t.gd)}</span>
+          <span class="bar">${segs}</span></span>
+        <span class="tot">${t.total}<small>points</small></span>
       </button>
       <div class="detail">
         <table class="teams">
-          <thead><tr><th>Equipo</th><th>Pos</th><th>Liga</th><th>Bono</th><th>Elim.</th><th>Total</th></tr></thead>
-          <tbody>${body}</tbody>
-        </table>
-        ${!leaguePhaseDone ? '<p class="sub">Los bonos en tono apagado son provisionales: dependen de la tabla final tras la jornada 8.</p>' : ""}
+          <thead><tr><th>Club</th><th>Pos</th><th>League</th><th>Bonus</th><th>KO</th>
+          <th>GF</th><th>GA</th><th>GD</th><th>Total</th></tr></thead>
+          <tbody>${body}</tbody></table>
+        ${zone}
+        ${!now.leagueDone && started ? '<p class="sub">Dimmed bonuses are provisional — they depend on the final table after matchday 8.</p>' : ""}
       </div></div>`;
   }).join("");
 
   document.querySelectorAll(".mgr > button").forEach(b => b.addEventListener("click", () => {
-    const box = b.parentElement, open = box.classList.toggle("open");
-    b.setAttribute("aria-expanded", open);
+    b.setAttribute("aria-expanded", b.parentElement.classList.toggle("open"));
   }));
-
-  // --- 36 clubs
-  const ordered = data.standings.length
-    ? data.standings.map(s => s.team)
-    : [...clubScores.keys()].sort();
-  const CUTNOTE = leaguePhaseDone ? {
-    8: "Clasificados directo a octavos · +3 puntos",
-    24: "Van al playoff 9–24 · +1 punto. Del 25.º al 36.º, eliminados",
-  } : {
-    8: "Zona de clasificación directa a octavos · +3 puntos",
-    24: "Zona de playoff 9–24 · +1 punto. Abajo, zona de eliminación",
-  };
-  $("#clubs").innerHTML = ordered.map(club => {
-    const s = clubScores.get(club);
-    const row = data.standings.find(r => r.team === club) || {};
-    if (!s) return "";
-    let cls = s.pos == null ? "" : (s.pos <= 8 ? "q8" : s.pos <= 24 ? "q24" : "elim");
-    if (row.pos === 8) cls += " cut8";
-    if (row.pos === 24) cls += " cut24";
-    if (cls.includes("elim") && !leaguePhaseDone) cls = cls.replace("elim", "drop");
-    return `<tr class="${cls}">
-      <td>${row.pos ?? ""}</td>
-      <td>${esc(club)}</td>
-      <td class="owner">${esc(ownerOf(data, club) || "")}</td>
-      <td>${row.played ?? 0}</td>
-      <td>${row.gd > 0 ? "+" + row.gd : (row.gd ?? 0)}</td>
-      <td>${row.pts ?? 0}</td>
-      <td><b>${s.total}</b></td></tr>` +
-      (CUTNOTE[row.pos] ? `<tr class="cutnote"><td colspan="7">${CUTNOTE[row.pos]}</td></tr>` : "");
-  }).join("");
-
-  const when = new Date(data.updated);
-  $("#stamp").textContent = "Actualizado " + when.toLocaleString("es", {
-    day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"
-  }) + " · datos de " + (data.source || "football-data.org");
 }
 
-function ownerOf(data, club) {
-  for (const [mgr, teams] of Object.entries(data.draft)) if (teams.includes(club)) return mgr;
-  return null;
+/* ---- position-over-time bump chart ---- */
+function renderChart(data, doneRounds) {
+  if (doneRounds.length < 2) return;
+  $("#chartsec").hidden = false;
+
+  const series = new Map(Object.keys(data.draft).map(n => [n, []]));
+  const labels = [];
+  for (const idx of doneRounds) {
+    const snap = scoreAll(data, idx, null);
+    labels.push(ROUND_LABEL[ROUND_ORDER[idx]]);
+    for (const m of snap.managers) series.get(m.mgr).push(m.rank);
+  }
+
+  // Size the viewBox near the real render width so text stays legible on phones.
+  const narrow = window.innerWidth < 640;
+  const W = narrow ? 360 : 880, H = narrow ? 260 : 300;
+  const L = 22, R = 12, T = 14, B = 24;
+  const n = labels.length;
+  const x = i => L + (n === 1 ? 0 : i * (W - L - R) / (n - 1));
+  const y = r => T + (r - 1) * (H - T - B) / 8;
+  const step = (H - T - B) / 8;
+
+  let g = "";
+  for (let r = 1; r <= 9; r++) {
+    if (r % 2 === 0) g += `<rect class="bband" x="${L}" y="${y(r) - step / 2}" width="${W - L - R}" height="${step}"/>`;
+    g += `<line class="bgrid" x1="${L}" y1="${y(r)}" x2="${W - R}" y2="${y(r)}"/>`;
+    if (r === 1 || r === 5 || r === 9)
+      g += `<text class="bax" x="${L - 7}" y="${y(r) + 4}" text-anchor="end">${r}</text>`;
+  }
+  labels.forEach((lb, i) =>
+    g += `<text class="bax" x="${x(i)}" y="${H - 6}" text-anchor="middle">${lb}</text>`);
+
+  for (const [mgr, rs] of series) {
+    const c = COLOR.get(mgr), k = "k" + mgr.replace(/\W/g, "");
+    const d = rs.map((r, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(r).toFixed(1)}`).join(" ");
+    g += `<path class="bl ${k}" d="${d}" stroke="${c}" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g += rs.map((r, i) =>
+      `<circle class="bd ${k}" cx="${x(i).toFixed(1)}" cy="${y(r).toFixed(1)}" r="${narrow ? 2.2 : 2.8}" fill="${c}"/>`).join("");
+  }
+
+  const names = [...series.keys()].sort();
+  $("#chart").innerHTML =
+    `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Manager position after each round">${g}</svg>` +
+    `<div class="legend">` +
+    names.map(m => `<button data-k="k${m.replace(/\W/g, "")}" style="--c:${COLOR.get(m)}">
+        <s style="background:${COLOR.get(m)}"></s>${esc(m)}</button>`).join("") +
+    `<button class="clr" data-k="">Show all</button></div>`;
+
+  const box = $("#chart");
+  box.querySelectorAll(".legend button").forEach(btn => btn.addEventListener("click", () => {
+    const k = btn.dataset.k;
+    const already = btn.classList.contains("on");
+    box.querySelectorAll(".hot").forEach(e => e.classList.remove("hot"));
+    box.querySelectorAll(".legend button").forEach(b => { b.classList.remove("on"); b.style.color = ""; });
+    if (!k || already) { box.classList.remove("sel"); return; }
+    box.classList.add("sel");
+    btn.classList.add("on");
+    btn.style.color = getComputedStyle(btn).getPropertyValue("--c");
+    box.querySelectorAll("." + k).forEach(e => e.classList.add("hot"));
+  }));
+}
+
+/* ---- results and fixtures ---- */
+function feedRow(m, withScore) {
+  const d = new Date(m.utcDate);
+  const date = d.toLocaleDateString("en-GB", { day:"numeric", month:"short" });
+  const time = d.toLocaleTimeString("en-GB", { hour:"2-digit", minute:"2-digit" });
+  const oh = ownerOf(m.home), oa = ownerOf(m.away);
+  const pts = c => { const p = matchPoints(m, c); return p ? `<b>+${p}</b>` : '<span class="z">0</span>'; };
+  const mid = withScore
+    ? `${esc(m.home)}<span class="sc">${m.homeScore}–${m.awayScore}</span>${esc(m.away)}`
+    : `${esc(m.home)} <span class="stg">v</span> ${esc(m.away)}`;
+  const right = withScore
+    ? `${esc(oh || "—")} ${pts(m.home)} · ${esc(oa || "—")} ${pts(m.away)}`
+    : `${esc(oh || "—")} v ${esc(oa || "—")}`;
+  const shoot = (withScore && m.penHome != null)
+    ? ` <span class="stg">(${m.penHome}–${m.penAway} pens, scored as a draw)</span>` : "";
+  const nop = m.stage === "PLAYOFF" ? ' <span class="stg">· playoff, no points</span>' : "";
+  return `<div class="feed"><span class="fd">${date}${withScore ? "" : " " + time}</span>
+    <span class="fm">${mid}${shoot}${nop}</span><span class="fo">${right}</span></div>`;
+}
+
+function renderFeeds(data) {
+  const done = data.matches.filter(m => m.status === "FINISHED")
+    .sort((a, b) => (b.utcDate || "").localeCompare(a.utcDate || "")).slice(0, 12);
+  if (done.length) {
+    $("#resultsec").hidden = false;
+    $("#reslabel").textContent = STAGE_NAME[done[0].stage] || "";
+    $("#results").innerHTML = done.map(m => feedRow(m, true)).join("");
+  }
+  const next = data.matches
+    .filter(m => !["FINISHED","IN_PLAY","PAUSED"].includes(m.status))
+    .sort((a, b) => (a.utcDate || "").localeCompare(b.utcDate || "")).slice(0, 12);
+  if (next.length) {
+    $("#fixsec").hidden = false;
+    $("#fixlabel").textContent = STAGE_NAME[next[0].stage] || "";
+    $("#fixtures").innerHTML = next.map(m => feedRow(m, false)).join("");
+  }
+}
+
+function renderClubs(data, now, official) {
+  const CUT = now.leagueDone ? {
+    8:  "Through to the round of 16 · +3 points",
+    24: "Into the 9–24 playoff · +1 point. 25th to 36th are out",
+  } : {
+    8:  "Automatic qualification places · +3 points",
+    24: "Playoff places · +1 point. Below the line, elimination",
+  };
+  const rows = official.length
+    ? official
+    : buildLeagueTable(data.matches, Object.values(data.draft).flat());
+  $("#clubs").innerHTML = rows.map(row => {
+    const club = row.club || row.team;
+    const s = now.clubs.get(club);
+    if (!s) return "";
+    let cls = row.pos <= 8 ? "q8" : row.pos <= 24 ? "q24" : "elim";
+    if (cls === "elim" && !now.leagueDone) cls = "drop";
+    if (row.pos === 8) cls += " cut8";
+    if (row.pos === 24) cls += " cut24";
+    return `<tr class="${cls}">
+      <td>${row.pos ?? ""}</td><td>${esc(club)}</td>
+      <td class="owner">${esc(ownerOf(club) || "")}</td>
+      <td>${row.played ?? 0}</td><td>${row.gf ?? 0}</td><td>${row.ga ?? 0}</td>
+      <td>${fmtGD(row.gd ?? 0)}</td><td>${row.pts ?? 0}</td>
+      <td><b>${s.total}</b></td></tr>` +
+      (CUT[row.pos] ? `<tr class="cutnote"><td colspan="9">${CUT[row.pos]}</td></tr>` : "");
+  }).join("");
 }
 
 /* =========================================================================
    LOAD
    ========================================================================= */
 const EMPTY_DRAFT = {
-  "Chino": ["Bayern München", "Stuttgart", "Fenerbahçe", "Sabah"],
-  "Eduars": ["Barcelona", "Sporting CP", "Galatasaray", "Slovan Bratislava"],
-  "OMG": ["Real Madrid", "RB Leipzig", "Como", "Viking"],
-  "Nestor": ["Paris Saint-Germain", "Napoli", "PSV", "Slavia Praha"],
-  "Doug": ["Arsenal", "Roma", "Real Betis", "AEK Athens"],
-  "Marron": ["Atlético Madrid", "Aston Villa", "Villarreal", "LASK"],
-  "Lucho": ["Manchester City", "Porto", "Lille", "Shakhtar Donetsk"],
-  "Pohio": ["Liverpool", "Borussia Dortmund", "Club Brugge", "Feyenoord"],
-  "Chacho": ["Manchester United", "Inter", "Bodø/Glimt", "Lens"],
+  "Chino": ["Bayern München","Stuttgart","Fenerbahçe","Sabah"],
+  "Eduars": ["Barcelona","Sporting CP","Galatasaray","Slovan Bratislava"],
+  "OMG": ["Real Madrid","RB Leipzig","Como","Viking"],
+  "Nestor": ["Paris Saint-Germain","Napoli","PSV","Slavia Praha"],
+  "Doug": ["Arsenal","Roma","Real Betis","AEK Athens"],
+  "Marron": ["Atlético Madrid","Aston Villa","Villarreal","LASK"],
+  "Lucho": ["Manchester City","Porto","Lille","Shakhtar Donetsk"],
+  "Pohio": ["Liverpool","Borussia Dortmund","Club Brugge","Feyenoord"],
+  "Chacho": ["Manchester United","Inter","Bodø/Glimt","Lens"],
 };
 
 fetch("data.json?t=" + Date.now())
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(render)
   .catch(() => {
-    render({
-      updated: new Date().toISOString(), source: "sin datos aún",
-      draft: EMPTY_DRAFT, standings: [], matches: []
-    });
-    $("#meta").innerHTML = '9 managers · 36 equipos<span class="err">Todavía no hay resultados cargados. La tabla se llena sola en cuanto corra la primera actualización — no hay nada que hacer.</span>';
+    render({ updated:new Date().toISOString(), source:"no data yet",
+             draft:EMPTY_DRAFT, standings:[], matches:[] });
+    $("#meta").innerHTML = '9 managers · 36 clubs<span class="err">No results loaded yet. ' +
+      'The table fills itself as soon as the next update runs — nothing to do.</span>';
   });
 </script>
 </body>
