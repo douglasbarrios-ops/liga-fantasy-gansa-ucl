@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T19:42:10+00:00",
+ "updated": "2026-09-09T19:56:17+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -671,7 +671,7 @@
    "leg": null,
    "home": "Liverpool",
    "away": "Atlético Madrid",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 1,
    "regHome": null,
    "regAway": null,
@@ -680,7 +680,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "AWAY_TEAM"
+   "winner": "DRAW"
   },
   {
    "id": 575332,
