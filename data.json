@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T19:13:31+00:00",
+ "updated": "2026-09-09T19:29:35+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -672,7 +672,7 @@
    "home": "Liverpool",
    "away": "Atlético Madrid",
    "homeScore": 0,
-   "awayScore": 0,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -680,7 +680,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "AWAY_TEAM"
   },
   {
    "id": 575332,
@@ -692,7 +692,7 @@
    "leg": null,
    "home": "Paris Saint-Germain",
    "away": "Slovan Bratislava",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -701,7 +701,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575333,
