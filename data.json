@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T20:48:18+00:00",
+ "updated": "2026-09-09T20:59:11+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -61,6 +61,18 @@
  "standings": [
   {
    "pos": 1,
+   "team": "Paris Saint-Germain",
+   "played": 1,
+   "won": 1,
+   "draw": 0,
+   "lost": 0,
+   "gf": 6,
+   "ga": 1,
+   "gd": 5,
+   "pts": 3
+  },
+  {
+   "pos": 2,
    "team": "Barcelona",
    "played": 1,
    "won": 1,
@@ -72,7 +84,7 @@
    "pts": 3
   },
   {
-   "pos": 2,
+   "pos": 3,
    "team": "Stuttgart",
    "played": 1,
    "won": 1,
@@ -84,7 +96,7 @@
    "pts": 3
   },
   {
-   "pos": 3,
+   "pos": 4,
    "team": "Manchester City",
    "played": 1,
    "won": 1,
@@ -96,7 +108,7 @@
    "pts": 3
   },
   {
-   "pos": 4,
+   "pos": 5,
    "team": "Aston Villa",
    "played": 1,
    "won": 1,
@@ -108,7 +120,7 @@
    "pts": 3
   },
   {
-   "pos": 5,
+   "pos": 6,
    "team": "Borussia Dortmund",
    "played": 1,
    "won": 1,
@@ -120,7 +132,7 @@
    "pts": 3
   },
   {
-   "pos": 6,
+   "pos": 7,
    "team": "Real Betis",
    "played": 1,
    "won": 1,
@@ -132,7 +144,7 @@
    "pts": 3
   },
   {
-   "pos": 7,
+   "pos": 8,
    "team": "Real Madrid",
    "played": 1,
    "won": 1,
@@ -144,7 +156,19 @@
    "pts": 3
   },
   {
-   "pos": 8,
+   "pos": 9,
+   "team": "Liverpool",
+   "played": 1,
+   "won": 1,
+   "draw": 0,
+   "lost": 0,
+   "gf": 2,
+   "ga": 1,
+   "gd": 1,
+   "pts": 3
+  },
+  {
+   "pos": 10,
    "team": "AEK Athens",
    "played": 1,
    "won": 1,
@@ -156,79 +180,19 @@
    "pts": 3
   },
   {
-   "pos": 9,
-   "team": "Liverpool",
-   "played": 0,
-   "won": 0,
-   "draw": 0,
-   "lost": 0,
-   "gf": 0,
-   "ga": 0,
-   "gd": 0,
-   "pts": 0
-  },
-  {
-   "pos": 10,
-   "team": "Atlético Madrid",
-   "played": 0,
-   "won": 0,
-   "draw": 0,
-   "lost": 0,
-   "gf": 0,
-   "ga": 0,
-   "gd": 0,
-   "pts": 0
-  },
-  {
    "pos": 11,
-   "team": "Paris Saint-Germain",
-   "played": 0,
-   "won": 0,
+   "team": "Arsenal",
+   "played": 1,
+   "won": 1,
    "draw": 0,
    "lost": 0,
-   "gf": 0,
+   "gf": 1,
    "ga": 0,
-   "gd": 0,
-   "pts": 0
+   "gd": 1,
+   "pts": 3
   },
   {
    "pos": 12,
-   "team": "Slovan Bratislava",
-   "played": 0,
-   "won": 0,
-   "draw": 0,
-   "lost": 0,
-   "gf": 0,
-   "ga": 0,
-   "gd": 0,
-   "pts": 0
-  },
-  {
-   "pos": 13,
-   "team": "Napoli",
-   "played": 0,
-   "won": 0,
-   "draw": 0,
-   "lost": 0,
-   "gf": 0,
-   "ga": 0,
-   "gd": 0,
-   "pts": 0
-  },
-  {
-   "pos": 14,
-   "team": "Arsenal",
-   "played": 0,
-   "won": 0,
-   "draw": 0,
-   "lost": 0,
-   "gf": 0,
-   "ga": 0,
-   "gd": 0,
-   "pts": 0
-  },
-  {
-   "pos": 15,
    "team": "Sporting CP",
    "played": 0,
    "won": 0,
@@ -240,7 +204,7 @@
    "pts": 0
   },
   {
-   "pos": 16,
+   "pos": 13,
    "team": "Galatasaray",
    "played": 0,
    "won": 0,
@@ -252,7 +216,7 @@
    "pts": 0
   },
   {
-   "pos": 17,
+   "pos": 14,
    "team": "Fenerbahçe",
    "played": 0,
    "won": 0,
@@ -264,7 +228,7 @@
    "pts": 0
   },
   {
-   "pos": 18,
+   "pos": 15,
    "team": "Roma",
    "played": 0,
    "won": 0,
@@ -276,7 +240,7 @@
    "pts": 0
   },
   {
-   "pos": 19,
+   "pos": 16,
    "team": "PSV",
    "played": 0,
    "won": 0,
@@ -288,7 +252,7 @@
    "pts": 0
   },
   {
-   "pos": 20,
+   "pos": 17,
    "team": "Shakhtar Donetsk",
    "played": 0,
    "won": 0,
@@ -300,7 +264,7 @@
    "pts": 0
   },
   {
-   "pos": 21,
+   "pos": 18,
    "team": "Bayern München",
    "played": 0,
    "won": 0,
@@ -312,7 +276,7 @@
    "pts": 0
   },
   {
-   "pos": 22,
+   "pos": 19,
    "team": "Bodø/Glimt",
    "played": 0,
    "won": 0,
@@ -324,7 +288,7 @@
    "pts": 0
   },
   {
-   "pos": 23,
+   "pos": 20,
    "team": "Manchester United",
    "played": 0,
    "won": 0,
@@ -336,7 +300,7 @@
    "pts": 0
   },
   {
-   "pos": 24,
+   "pos": 21,
    "team": "Sabah",
    "played": 0,
    "won": 0,
@@ -348,7 +312,7 @@
    "pts": 0
   },
   {
-   "pos": 25,
+   "pos": 22,
    "team": "Como",
    "played": 0,
    "won": 0,
@@ -360,7 +324,7 @@
    "pts": 0
   },
   {
-   "pos": 26,
+   "pos": 23,
    "team": "RB Leipzig",
    "played": 0,
    "won": 0,
@@ -372,7 +336,7 @@
    "pts": 0
   },
   {
-   "pos": 27,
+   "pos": 24,
    "team": "Slavia Praha",
    "played": 0,
    "won": 0,
@@ -384,7 +348,7 @@
    "pts": 0
   },
   {
-   "pos": 28,
+   "pos": 25,
    "team": "Lens",
    "played": 0,
    "won": 0,
@@ -396,7 +360,7 @@
    "pts": 0
   },
   {
-   "pos": 29,
+   "pos": 26,
    "team": "Club Brugge",
    "played": 1,
    "won": 0,
@@ -408,7 +372,7 @@
    "pts": 0
   },
   {
-   "pos": 30,
+   "pos": 27,
    "team": "Villarreal",
    "played": 1,
    "won": 0,
@@ -420,7 +384,7 @@
    "pts": 0
   },
   {
-   "pos": 31,
+   "pos": 28,
    "team": "Lille",
    "played": 1,
    "won": 0,
@@ -432,7 +396,7 @@
    "pts": 0
   },
   {
-   "pos": 32,
+   "pos": 29,
    "team": "Inter",
    "played": 1,
    "won": 0,
@@ -444,7 +408,19 @@
    "pts": 0
   },
   {
-   "pos": 33,
+   "pos": 30,
+   "team": "Atlético Madrid",
+   "played": 1,
+   "won": 0,
+   "draw": 0,
+   "lost": 1,
+   "gf": 1,
+   "ga": 2,
+   "gd": -1,
+   "pts": 0
+  },
+  {
+   "pos": 31,
    "team": "LASK",
    "played": 1,
    "won": 0,
@@ -456,7 +432,19 @@
    "pts": 0
   },
   {
-   "pos": 34,
+   "pos": 32,
+   "team": "Napoli",
+   "played": 1,
+   "won": 0,
+   "draw": 0,
+   "lost": 1,
+   "gf": 0,
+   "ga": 1,
+   "gd": -1,
+   "pts": 0
+  },
+  {
+   "pos": 33,
    "team": "Viking",
    "played": 1,
    "won": 0,
@@ -468,7 +456,7 @@
    "pts": 0
   },
   {
-   "pos": 35,
+   "pos": 34,
    "team": "Porto",
    "played": 1,
    "won": 0,
@@ -480,7 +468,7 @@
    "pts": 0
   },
   {
-   "pos": 36,
+   "pos": 35,
    "team": "Feyenoord",
    "played": 1,
    "won": 0,
@@ -489,6 +477,18 @@
    "gf": 1,
    "ga": 5,
    "gd": -4,
+   "pts": 0
+  },
+  {
+   "pos": 36,
+   "team": "Slovan Bratislava",
+   "played": 1,
+   "won": 0,
+   "draw": 0,
+   "lost": 1,
+   "gf": 1,
+   "ga": 6,
+   "gd": -5,
    "pts": 0
   }
  ],
@@ -685,14 +685,14 @@
   {
    "id": 575332,
    "utcDate": "2026-09-09T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Paris Saint-Germain",
    "away": "Slovan Bratislava",
-   "homeScore": 5,
+   "homeScore": 6,
    "awayScore": 1,
    "regHome": null,
    "regAway": null,
