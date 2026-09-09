@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T17:59:06+00:00",
+ "updated": "2026-09-09T18:22:40+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -629,8 +629,8 @@
    "leg": null,
    "home": "Barcelona",
    "away": "Feyenoord",
-   "homeScore": 2,
-   "awayScore": 0,
+   "homeScore": 3,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
