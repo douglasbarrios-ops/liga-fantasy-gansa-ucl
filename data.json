@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T20:14:55+00:00",
+ "updated": "2026-09-09T20:32:21+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -692,8 +692,8 @@
    "leg": null,
    "home": "Paris Saint-Germain",
    "away": "Slovan Bratislava",
-   "homeScore": 4,
-   "awayScore": 0,
+   "homeScore": 5,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -734,7 +734,7 @@
    "leg": null,
    "home": "Sporting CP",
    "away": "Galatasaray",
-   "homeScore": 1,
+   "homeScore": 3,
    "awayScore": 1,
    "regHome": null,
    "regAway": null,
@@ -743,7 +743,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575335,
