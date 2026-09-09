@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T17:11:26+00:00",
+ "updated": "2026-09-09T17:31:28+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -629,7 +629,7 @@
    "leg": null,
    "home": "Barcelona",
    "away": "Feyenoord",
-   "homeScore": 1,
+   "homeScore": 2,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -650,8 +650,8 @@
    "leg": null,
    "home": "Stuttgart",
    "away": "Viking",
-   "homeScore": 0,
-   "awayScore": 0,
+   "homeScore": 3,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -659,7 +659,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575331,
