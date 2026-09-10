@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T16:49:17+00:00",
+ "updated": "2026-09-10T17:00:21+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -748,15 +748,15 @@
   {
    "id": 575335,
    "utcDate": "2026-09-10T16:45:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Fenerbahçe",
    "away": "Roma",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -764,20 +764,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575336,
    "utcDate": "2026-09-10T16:45:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "PSV",
    "away": "Shakhtar Donetsk",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -785,7 +785,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575337,
