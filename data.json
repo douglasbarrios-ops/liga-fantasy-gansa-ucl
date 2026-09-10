@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T20:21:31+00:00",
+ "updated": "2026-09-10T20:40:32+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -797,7 +797,7 @@
    "leg": null,
    "home": "Bayern München",
    "away": "Bodø/Glimt",
-   "homeScore": 1,
+   "homeScore": 2,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -818,7 +818,7 @@
    "leg": null,
    "home": "Manchester United",
    "away": "Sabah",
-   "homeScore": 3,
+   "homeScore": 4,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -840,7 +840,7 @@
    "home": "Como",
    "away": "RB Leipzig",
    "homeScore": 3,
-   "awayScore": 0,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -861,7 +861,7 @@
    "home": "Slavia Praha",
    "away": "Lens",
    "homeScore": 1,
-   "awayScore": 0,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -869,7 +869,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "HOME_TEAM"
+   "winner": "DRAW"
   },
   {
    "id": 575341,
