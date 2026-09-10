@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T19:38:17+00:00",
+ "updated": "2026-09-10T19:49:34+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -839,7 +839,7 @@
    "leg": null,
    "home": "Como",
    "away": "RB Leipzig",
-   "homeScore": 1,
+   "homeScore": 2,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -860,7 +860,7 @@
    "leg": null,
    "home": "Slavia Praha",
    "away": "Lens",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -869,7 +869,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575341,
