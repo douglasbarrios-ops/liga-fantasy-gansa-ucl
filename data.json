@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T20:00:46+00:00",
+ "updated": "2026-09-10T20:21:31+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -790,14 +790,14 @@
   {
    "id": 575337,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "PAUSED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Bayern München",
    "away": "Bodø/Glimt",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -806,12 +806,12 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575338,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "PAUSED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
@@ -832,14 +832,14 @@
   {
    "id": 575339,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "PAUSED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Como",
    "away": "RB Leipzig",
-   "homeScore": 2,
+   "homeScore": 3,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -853,14 +853,14 @@
   {
    "id": 575340,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "PAUSED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Slavia Praha",
    "away": "Lens",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -869,7 +869,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575341,
