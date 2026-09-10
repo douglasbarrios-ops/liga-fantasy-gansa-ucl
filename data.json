@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T18:33:52+00:00",
+ "updated": "2026-09-10T18:51:33+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -206,50 +206,50 @@
   {
    "pos": 13,
    "team": "Fenerbahçe",
-   "played": 0,
+   "played": 1,
    "won": 0,
-   "draw": 0,
+   "draw": 1,
    "lost": 0,
-   "gf": 0,
-   "ga": 0,
+   "gf": 1,
+   "ga": 1,
    "gd": 0,
-   "pts": 0
+   "pts": 1
   },
   {
    "pos": 14,
    "team": "Roma",
-   "played": 0,
+   "played": 1,
    "won": 0,
-   "draw": 0,
+   "draw": 1,
    "lost": 0,
-   "gf": 0,
-   "ga": 0,
+   "gf": 1,
+   "ga": 1,
    "gd": 0,
-   "pts": 0
+   "pts": 1
   },
   {
    "pos": 15,
    "team": "PSV",
-   "played": 0,
+   "played": 1,
    "won": 0,
-   "draw": 0,
+   "draw": 1,
    "lost": 0,
-   "gf": 0,
-   "ga": 0,
+   "gf": 1,
+   "ga": 1,
    "gd": 0,
-   "pts": 0
+   "pts": 1
   },
   {
    "pos": 16,
    "team": "Shakhtar Donetsk",
-   "played": 0,
+   "played": 1,
    "won": 0,
-   "draw": 0,
+   "draw": 1,
    "lost": 0,
-   "gf": 0,
-   "ga": 0,
+   "gf": 1,
+   "ga": 1,
    "gd": 0,
-   "pts": 0
+   "pts": 1
   },
   {
    "pos": 17,
@@ -748,7 +748,7 @@
   {
    "id": 575335,
    "utcDate": "2026-09-10T16:45:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
@@ -769,7 +769,7 @@
   {
    "id": 575336,
    "utcDate": "2026-09-10T16:45:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
