@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T17:22:07+00:00",
+ "updated": "2026-09-10T17:39:46+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -756,7 +756,7 @@
    "home": "Fenerbahçe",
    "away": "Roma",
    "homeScore": 0,
-   "awayScore": 0,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -764,7 +764,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "AWAY_TEAM"
   },
   {
    "id": 575336,
@@ -777,7 +777,7 @@
    "home": "PSV",
    "away": "Shakhtar Donetsk",
    "homeScore": 0,
-   "awayScore": 0,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -785,7 +785,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "AWAY_TEAM"
   },
   {
    "id": 575337,
