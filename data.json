@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T19:49:34+00:00",
+ "updated": "2026-09-10T20:00:46+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -790,7 +790,7 @@
   {
    "id": 575337,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "PAUSED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
@@ -811,14 +811,14 @@
   {
    "id": 575338,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "PAUSED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Manchester United",
    "away": "Sabah",
-   "homeScore": 1,
+   "homeScore": 3,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -832,7 +832,7 @@
   {
    "id": 575339,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "PAUSED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
@@ -853,14 +853,14 @@
   {
    "id": 575340,
    "utcDate": "2026-09-10T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "PAUSED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 1,
    "leg": null,
    "home": "Slavia Praha",
    "away": "Lens",
-   "homeScore": 1,
+   "homeScore": 0,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -869,7 +869,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "HOME_TEAM"
+   "winner": "DRAW"
   },
   {
    "id": 575341,
