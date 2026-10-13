@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T21:01:35+00:00",
+ "updated": "2026-10-13T23:25:38+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -916,7 +916,7 @@
   {
    "id": 575343,
    "utcDate": "2026-10-13T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 2,
@@ -958,7 +958,7 @@
   {
    "id": 575345,
    "utcDate": "2026-10-13T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 2,
@@ -1000,7 +1000,7 @@
   {
    "id": 575347,
    "utcDate": "2026-10-13T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 2,
@@ -1021,7 +1021,7 @@
   {
    "id": 575348,
    "utcDate": "2026-10-13T19:00:00Z",
-   "status": "IN_PLAY",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 2,
