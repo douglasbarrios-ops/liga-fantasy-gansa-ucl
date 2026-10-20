@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T19:18:40+00:00",
+ "updated": "2026-10-20T19:52:16+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -1301,7 +1301,7 @@
    "leg": null,
    "home": "Manchester City",
    "away": "AEK Athens",
-   "homeScore": 0,
+   "homeScore": 2,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -1310,7 +1310,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575362,
@@ -1322,7 +1322,7 @@
    "leg": null,
    "home": "Stuttgart",
    "away": "Atlético Madrid",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -1331,7 +1331,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575363,
@@ -1343,8 +1343,8 @@
    "leg": null,
    "home": "Liverpool",
    "away": "Villarreal",
-   "homeScore": 0,
-   "awayScore": 1,
+   "homeScore": 1,
+   "awayScore": 2,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1364,7 +1364,7 @@
    "leg": null,
    "home": "Roma",
    "away": "Slovan Bratislava",
-   "homeScore": 0,
+   "homeScore": 2,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -1373,7 +1373,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575365,
@@ -1406,8 +1406,8 @@
    "leg": null,
    "home": "Napoli",
    "away": "Bodø/Glimt",
-   "homeScore": 1,
-   "awayScore": 0,
+   "homeScore": 2,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1427,7 +1427,7 @@
    "leg": null,
    "home": "Paris Saint-Germain",
    "away": "Barcelona",
-   "homeScore": 0,
+   "homeScore": 1,
    "awayScore": 0,
    "regHome": null,
    "regAway": null,
@@ -1436,7 +1436,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": "DRAW"
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575368,
