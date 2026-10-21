@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T15:19:14+00:00",
+ "updated": "2026-10-21T19:56:58+00:00",
  "season": "2026/27",
  "source": "football-data.org",
  "draft": {
@@ -121,6 +121,18 @@
   },
   {
    "pos": 6,
+   "team": "Como",
+   "played": 3,
+   "won": 2,
+   "draw": 0,
+   "lost": 1,
+   "gf": 10,
+   "ga": 5,
+   "gd": 5,
+   "pts": 6
+  },
+  {
+   "pos": 7,
    "team": "Manchester City",
    "played": 3,
    "won": 2,
@@ -132,7 +144,7 @@
    "pts": 6
   },
   {
-   "pos": 7,
+   "pos": 8,
    "team": "Sporting CP",
    "played": 2,
    "won": 2,
@@ -144,7 +156,7 @@
    "pts": 6
   },
   {
-   "pos": 8,
+   "pos": 9,
    "team": "Arsenal",
    "played": 2,
    "won": 2,
@@ -156,7 +168,7 @@
    "pts": 6
   },
   {
-   "pos": 9,
+   "pos": 10,
    "team": "Real Madrid",
    "played": 2,
    "won": 2,
@@ -168,7 +180,7 @@
    "pts": 6
   },
   {
-   "pos": 10,
+   "pos": 11,
    "team": "Real Betis",
    "played": 2,
    "won": 2,
@@ -180,7 +192,7 @@
    "pts": 6
   },
   {
-   "pos": 11,
+   "pos": 12,
    "team": "Borussia Dortmund",
    "played": 3,
    "won": 2,
@@ -192,7 +204,7 @@
    "pts": 6
   },
   {
-   "pos": 12,
+   "pos": 13,
    "team": "Bayern München",
    "played": 2,
    "won": 1,
@@ -204,7 +216,7 @@
    "pts": 4
   },
   {
-   "pos": 13,
+   "pos": 14,
    "team": "Roma",
    "played": 3,
    "won": 1,
@@ -216,7 +228,7 @@
    "pts": 4
   },
   {
-   "pos": 14,
+   "pos": 15,
    "team": "Shakhtar Donetsk",
    "played": 2,
    "won": 1,
@@ -228,7 +240,7 @@
    "pts": 4
   },
   {
-   "pos": 15,
+   "pos": 16,
    "team": "Atlético Madrid",
    "played": 3,
    "won": 1,
@@ -240,7 +252,7 @@
    "pts": 4
   },
   {
-   "pos": 16,
+   "pos": 17,
    "team": "PSV",
    "played": 3,
    "won": 1,
@@ -252,31 +264,7 @@
    "pts": 4
   },
   {
-   "pos": 17,
-   "team": "Como",
-   "played": 2,
-   "won": 1,
-   "draw": 0,
-   "lost": 1,
-   "gf": 6,
-   "ga": 4,
-   "gd": 2,
-   "pts": 3
-  },
-  {
    "pos": 18,
-   "team": "Manchester United",
-   "played": 2,
-   "won": 1,
-   "draw": 0,
-   "lost": 1,
-   "gf": 4,
-   "ga": 2,
-   "gd": 2,
-   "pts": 3
-  },
-  {
-   "pos": 19,
    "team": "Villarreal",
    "played": 3,
    "won": 1,
@@ -288,7 +276,7 @@
    "pts": 3
   },
   {
-   "pos": 20,
+   "pos": 19,
    "team": "Club Brugge",
    "played": 2,
    "won": 1,
@@ -297,6 +285,18 @@
    "gf": 6,
    "ga": 6,
    "gd": 0,
+   "pts": 3
+  },
+  {
+   "pos": 20,
+   "team": "Manchester United",
+   "played": 3,
+   "won": 1,
+   "draw": 0,
+   "lost": 2,
+   "gf": 5,
+   "ga": 6,
+   "gd": -1,
    "pts": 3
   },
   {
@@ -337,6 +337,18 @@
   },
   {
    "pos": 24,
+   "team": "Galatasaray",
+   "played": 3,
+   "won": 1,
+   "draw": 0,
+   "lost": 2,
+   "gf": 6,
+   "ga": 9,
+   "gd": -3,
+   "pts": 3
+  },
+  {
+   "pos": 25,
    "team": "Feyenoord",
    "played": 2,
    "won": 1,
@@ -348,7 +360,7 @@
    "pts": 3
   },
   {
-   "pos": 25,
+   "pos": 26,
    "team": "Sabah",
    "played": 3,
    "won": 1,
@@ -360,7 +372,7 @@
    "pts": 3
   },
   {
-   "pos": 26,
+   "pos": 27,
    "team": "Bodø/Glimt",
    "played": 3,
    "won": 1,
@@ -372,7 +384,7 @@
    "pts": 3
   },
   {
-   "pos": 27,
+   "pos": 28,
    "team": "AEK Athens",
    "played": 3,
    "won": 1,
@@ -384,7 +396,7 @@
    "pts": 3
   },
   {
-   "pos": 28,
+   "pos": 29,
    "team": "Fenerbahçe",
    "played": 3,
    "won": 0,
@@ -396,7 +408,7 @@
    "pts": 2
   },
   {
-   "pos": 29,
+   "pos": 30,
    "team": "Viking",
    "played": 2,
    "won": 0,
@@ -408,7 +420,7 @@
    "pts": 1
   },
   {
-   "pos": 30,
+   "pos": 31,
    "team": "Slavia Praha",
    "played": 3,
    "won": 0,
@@ -420,7 +432,7 @@
    "pts": 1
   },
   {
-   "pos": 31,
+   "pos": 32,
    "team": "Inter",
    "played": 2,
    "won": 0,
@@ -432,7 +444,7 @@
    "pts": 0
   },
   {
-   "pos": 32,
+   "pos": 33,
    "team": "LASK",
    "played": 2,
    "won": 0,
@@ -444,7 +456,7 @@
    "pts": 0
   },
   {
-   "pos": 33,
+   "pos": 34,
    "team": "Porto",
    "played": 3,
    "won": 0,
@@ -456,27 +468,15 @@
    "pts": 0
   },
   {
-   "pos": 34,
-   "team": "Lille",
-   "played": 2,
-   "won": 0,
-   "draw": 0,
-   "lost": 2,
-   "gf": 2,
-   "ga": 6,
-   "gd": -4,
-   "pts": 0
-  },
-  {
    "pos": 35,
-   "team": "Galatasaray",
-   "played": 2,
+   "team": "Lille",
+   "played": 3,
    "won": 0,
    "draw": 0,
-   "lost": 2,
-   "gf": 2,
-   "ga": 7,
-   "gd": -5,
+   "lost": 3,
+   "gf": 4,
+   "ga": 10,
+   "gd": -6,
    "pts": 0
   },
   {
@@ -1441,15 +1441,15 @@
   {
    "id": 575368,
    "utcDate": "2026-10-21T16:45:00Z",
-   "status": "TIMED",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Como",
    "away": "Manchester United",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 4,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1457,20 +1457,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575369,
    "utcDate": "2026-10-21T16:45:00Z",
-   "status": "TIMED",
+   "status": "FINISHED",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Lille",
    "away": "Galatasaray",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 2,
+   "awayScore": 4,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1478,20 +1478,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "AWAY_TEAM"
   },
   {
    "id": 575370,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Real Madrid",
    "away": "RB Leipzig",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1499,20 +1499,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575371,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Inter",
    "away": "Shakhtar Donetsk",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1520,20 +1520,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575372,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Bayern München",
    "away": "Arsenal",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1541,20 +1541,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575373,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Club Brugge",
    "away": "Lens",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1562,20 +1562,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575374,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Aston Villa",
    "away": "Viking",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 2,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1583,20 +1583,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "HOME_TEAM"
   },
   {
    "id": 575375,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Sporting CP",
    "away": "LASK",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 1,
+   "awayScore": 1,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1604,20 +1604,20 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575376,
    "utcDate": "2026-10-21T19:00:00Z",
-   "status": "TIMED",
+   "status": "IN_PLAY",
    "stage": "LEAGUE",
    "rawStage": "LEAGUE_STAGE",
    "matchday": 3,
    "leg": null,
    "home": "Real Betis",
    "away": "Feyenoord",
-   "homeScore": null,
-   "awayScore": null,
+   "homeScore": 0,
+   "awayScore": 0,
    "regHome": null,
    "regAway": null,
    "etHome": null,
@@ -1625,7 +1625,7 @@
    "penHome": null,
    "penAway": null,
    "duration": "REGULAR",
-   "winner": null
+   "winner": "DRAW"
   },
   {
    "id": 575377,
